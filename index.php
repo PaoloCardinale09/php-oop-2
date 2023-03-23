@@ -40,7 +40,11 @@ require_once __DIR__ . "/models/Game.php";
 //  var_dump($prova);
 $pallaImg = "https://ss-pics.s3.eu-west-1.amazonaws.com/files/1118832/large-51VM4ajmkYL._AC_SL1200_.jpg?1587282538";
 
+$kennelImg  = "https://ae01.alicdn.com/kf/H6d3dd2e37e944417aee014cfdc9089a55/Pet-Cat-Kennel-Paper-House-pieghevole-Cat-scratch-board-Inside-Dog-House-letto-per-animali-di.jpg";
+
 $pallaPerCani = new Game("Palla riccio", $pallaImg, 4,  "Cane", "Plastica", "Rosso");
+
+$cuccia = new Kennel("Cat House", $kennelImg, 30, "Gatti", "Cartone", "Legno");
 // echo $giochino->category;
 ?>
 
@@ -57,7 +61,7 @@ $pallaPerCani = new Game("Palla riccio", $pallaImg, 4,  "Cane", "Plastica", "Ros
 </head>
 
 <body>
-    <div class=" container mx-auto py-10">
+    <div class=" container mx-auto py-10 flex">
 
 
         <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -84,6 +88,35 @@ $pallaPerCani = new Game("Palla riccio", $pallaImg, 4,  "Cane", "Plastica", "Ros
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> <span
                         class=" font-semibold">Colore:</span>
                     <?php echo $pallaPerCani->color?>
+                </p>
+            </div>
+        </div>
+
+        <div
+            class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mx-10">
+            <a href="#">
+                <img class="rounded-t-lg" src=" <?php echo $cuccia->image?>" alt="" />
+            </a>
+            <div class="p-5 text-center">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        <?php echo $cuccia->name?></h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> <span
+                        class=" font-semibold">Prezzo:</span>
+                    <?php echo $cuccia->price?>€
+                </p>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> <span
+                        class=" font-semibold">Categoria:</span>
+                    <?php echo $cuccia->category?>
+                </p>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> <span
+                        class=" font-semibold">Materiale:</span>
+                    <?php echo $cuccia->material?>
+                </p>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> <span
+                        class=" font-semibold">Colore:</span>
+                    <?php echo $cuccia->color?>
                 </p>
             </div>
         </div>
